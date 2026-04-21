@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Splitwise Pro",
+  "version": "1.1",
+  "description": "Custom response modifier for Splitwise with UI",
+  "permissions": ["activeTab", "tabs"],
+  "host_permissions": ["*://*.splitwise.com/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Splitwise Pro Status"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.splitwise.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["inject.js"],
+      "matches": ["*://*.splitwise.com/*"]
+    }
+  ]
+}
